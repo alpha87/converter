@@ -8,7 +8,7 @@
 
   2. 需要设备 ID。
 
-  3. 去广告链接（供参考）：https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/Js.conf
+  3. 去广告链接（供参考）
 
   4. 转换后的链接脚本内自带设备 ID，无需手动添加。
   
