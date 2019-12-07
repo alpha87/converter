@@ -66,16 +66,16 @@
                 }
             },
             onCopy() {
-                this.$message({
-                    showClose: true,
-                    message: '复制成功',
-                    type: 'success'
-                });
+                this.$alert(
+                    '复制成功', 
+                    '', 
+                    {confirmButtonText: '确定'}
+                    );
             },
             onError(){
                 this.$message({
                     showClose: true,
-                    message: '复制成功',
+                    message: '错误！',
                     type: 'error'
                 });
             }}
