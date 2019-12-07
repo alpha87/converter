@@ -1,5 +1,7 @@
 # QuantumultX 远程 JavaScript 脚本调用，一键添加设备 ID
 
+🔶一键使用：[https://remotejs.lijianxun.top/](https://remotejs.lijianxun.top/)
+
 使用说明:
 
   1. 版本默认 **1.0.3**，不确定之后版本是否仍支持远程调用 JavaScript。
