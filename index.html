@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
     <title>QuantumultX远程JS调用</title>
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <script src="https://unpkg.com/element-ui/lib/index.js"></script>
@@ -66,11 +66,11 @@
                 }
             },
             onCopy() {
-                this.$alert(
-                    '复制成功', 
-                    '', 
-                    {confirmButtonText: '确定'}
-                    );
+                this.$message({
+                    showClose: true,
+                    message: '复制成功！',
+                    type: 'success'
+                });
             },
             onError(){
                 this.$message({
