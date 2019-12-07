@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>QuantumultX远程JS调用</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <script src="https://cdn.bootcss.com/Base64/1.0.2/base64.min.js"></script>
+    <style>
+        p {
+            text-indent:30px;
+        }
+    </style>
+</head>
+<body>
+<div id="root">
+    <div id="title">
+        <h3>QuantumultX 远程 JavaScript 脚本调用，一键添加设备 ID</h3>
+    </div>
+    <div id="description">
+        使用说明:
+        <p>1. 版本默认 <b>1.0.3</b>，不确定之后版本是否仍支持远程调用 JavaScript。</p>
+        <p>2. 需要设备 ID。</p>
+        <p>3. 去广告链接（供参考）：https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/Js.conf</p>
+        <p>4. 转换后的链接，脚本内自带设备 ID。</p>
+        <p>5. 本页面只是提供接口，方便用户使用。底层转换参考：
+            <a href="https://github.com/ImSingee/ConfigConverter" target="_blank">
+                ImSingee - ConfigConverter
+            </a>
+        </p>
+    </div>
+    <el-row :gutter="5">
+        <el-col :span="5">
+            <div class="grid-content bg-purple">
+                <el-input style="margin-top: 15px;" v-model.trim="idInput" placeholder="设备 ID">
+                </el-input>
+                <el-input style="margin-top: 10px;" v-model.trim="urlInput" placeholder="远程 JS 链接，不填默认使用 NobyDa 去广告配置">
+                </el-input>
+                <el-button style="margin-top: 10px;" type="primary" v-on:click="conver">提交</el-button>
+            </div>
+        </el-col>
+    </el-row>
+    <el-divider></el-divider>
+    {{ urlResult }}
+</div>
+</body>
+<script>
+    new Vue({
+        el: '#root',
+        data: function () {
+            return {
+                idInput: '',
+                urlInput: '',
+                urlResult: '',
+                base64Result: ''
+            }
+        },
+        methods:{
+            conver: function (e) {
+                this.base64Result = window.btoa(this.idInput);
+                if (this.urlInput === ''){
+                    this.urlResult = `https://cooljs.netlify.com/api/QuantumultXScriptSubscriptionAddDeviceID?idb64=${this.base64Result}&src=https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/Js.conf`
+                } else {
+                    this.urlResult = `https://cooljs.netlify.com/api/QuantumultXScriptSubscriptionAddDeviceID?idb64=${this.base64Result}&src=${this.urlInput}`
+                }
+            }
+        }
+    })
+</script>
+</html>
