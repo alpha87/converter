@@ -38,19 +38,11 @@
             </el-input>
             <el-input style="margin-top: 10px;" v-model.trim="urlInput" placeholder="远程 JS 链接，不填默认使用 NobyDa 去广告配置">
             </el-input>
-            <el-button style="margin-top: 10px;" type="primary" plain v-on:click="conver">提交</el-button>
+            <el-button style="margin-top: 10px;" type="primary" v-on:click="conver">提交</el-button>
         </div>
     </el-row>
     <el-divider></el-divider>
-    <div id="result">
-        <div id="result-btn">
-            <el-button
-                    v-clipboard:copy="urlResult"
-                    v-clipboard:success="onCopy"
-                    v-clipboard:error="onError"
-                    type="success" plain style="margin-top: 10px;" v-if="urlResult != ''">拷贝链接</el-button>
-        </div>
-    </div>
+    <el-button v-clipboard:copy="urlResult" v-clipboard:success="onCopy" v-clipboard:error="onError" type="success" style="margin-top: 10px;" v-if="urlResult != ''">拷贝链接</el-button>
 </div>
 </body>
 <script>
