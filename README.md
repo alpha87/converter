@@ -1,4 +1,4 @@
-# QuantumultX 远程 JavaScript 脚本调用，一键添加设备 ID。
+# QuantumultX 远程 JavaScript 脚本调用，一键添加设备 ID
 
 使用说明:
 
